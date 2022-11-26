@@ -16,7 +16,7 @@ namespace WinFormsApp1
             //Leo el telegrama
             textoTelegrama = txtTelegrama.Text;
             // telegrama urgente?
-            if (cbUrgente.Checked)
+            if (radioButton1.Checked)
                 tipoTelegrama = 'u';
             //Obtengo el número de palabras que forma el telegrama 
             numPalabras = textoTelegrama.Length;
@@ -36,6 +36,11 @@ namespace WinFormsApp1
             else
                 coste = 0;
             txtPrecio.Text = coste.ToString() + " euros";
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
