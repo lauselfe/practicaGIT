@@ -16,19 +16,22 @@ namespace WinFormsApp1
             //Leo el telegrama
             textoTelegrama = txtTelegrama.Text;
             // telegrama urgente?
+            //Obtengo el número de palabras que forma el telegrama 
+            numPalabras = textoTelegrama.Split(' ').Length;
             if (cbUrgente.Checked)
                 tipoTelegrama = 'u';
-            //Obtengo el número de palabras que forma el telegrama 
-            numPalabras = textoTelegrama.Length;
+            else
+                tipoTelegrama = 'o';
+
             //Si el telegrama es ordinario
             if (tipoTelegrama == 'o')
                 if (numPalabras <= 10)
-                    coste = 25;
+                    coste = 2.5;
                 else
                     coste = 0.5 * numPalabras;
             else
-            //Si el telegrama es urgente
-            if (tipoTelegrama == 'u')
+          //Si el telegrama es urgente
+          if (tipoTelegrama == 'u')
                 if (numPalabras <= 10)
                     coste = 5;
                 else
